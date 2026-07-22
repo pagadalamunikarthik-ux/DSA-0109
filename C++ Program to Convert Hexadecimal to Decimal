@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string hex;
+    int decimal = 0;
+
+    cout << "Enter a hexadecimal number: ";
+    cin >> hex;
+
+    for (char ch : hex) {
+        decimal *= 16;
+
+        if (ch >= '0' && ch <= '9')
+            decimal += ch - '0';
+        else if (ch >= 'A' && ch <= 'F')
+            decimal += ch - 'A' + 10;
+        else if (ch >= 'a' && ch <= 'f')
+            decimal += ch - 'a' + 10;
+    }
+
+    cout << "Decimal = " << decimal;
+
+    return 0;
+}
